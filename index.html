@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bunga untuk Ibu</title>
+<style>
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0b1628;
+  overflow:hidden;
+  font-family:sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+/* Batang bunga */
+.stem {
+  position:absolute;
+  bottom:0;
+  left:50%;
+  width:6px;
+  height:0;
+  background: #0f8b45;
+  transform: translateX(-50%);
+  animation: growStem 1s forwards;
+}
+
+/* Mekar kelopak */
+.flower {
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform: translateX(-50%) scale(0);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:0;
+  height:0;
+  animation: bloom 1s 1s forwards; /* delay agar batang muncul dulu */
+}
+
+.petals {
+  position:absolute;
+  width:40px;
+  height:40px;
+  background:#ff4d6d;
+  border-radius:50%;
+  opacity:0.9;
+}
+
+.petals:nth-child(1) { transform: rotate(0deg) translateY(-40px); }
+.petals:nth-child(2) { transform: rotate(72deg) translateY(-40px); }
+.petals:nth-child(3) { transform: rotate(144deg) translateY(-40px); }
+.petals:nth-child(4) { transform: rotate(216deg) translateY(-40px); }
+.petals:nth-child(5) { transform: rotate(288deg) translateY(-40px); }
+
+/* Animasi */
+@keyframes growStem {
+  to { height: 80px; }
+}
+
+@keyframes bloom {
+  to {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* Teks ucapan */
+h1 {
+  position:absolute;
+  bottom:-50px;
+  left:50%;
+  transform: translateX(-50%);
+  color:#fff;
+  font-size:20px;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="stem"></div>
+  <div class="flower">
+    <div class="petals"></div>
+    <div class="petals"></div>
+    <div class="petals"></div>
+    <div class="petals"></div>
+    <div class="petals"></div>
+  </div>
+  <h1>Untuk Ibu ❤️</h1>
+</div>
+
+</body>
+</html>
